@@ -1,4 +1,4 @@
-# EO_Agent — Hypothesis Generation for Earth-Observation Science
+# Tools, Co-authors, or Confounds? A Three-Agent LLM Pipeline for Earth-Observation Hypothesis Generation
 
 An end-to-end pipeline for discovering plausible, unused combinations of
 NASA Earth-observation datasets, combining:
