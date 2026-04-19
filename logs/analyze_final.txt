@@ -1,0 +1,158 @@
+Loaded 640 validations, 160 hypotheses
+
+════════════════════════════════════════════════════════════════════════
+1. INTER-RATER AGREEMENT (GPT vs Claude on same hypothesis)
+════════════════════════════════════════════════════════════════════════
+  importance     [blind]  n=160  Pearson=+0.351  Spearman=+0.337  kappa_q=+0.137  exact=37%  within-1=100%
+  importance     [ctx  ]  n=160  Pearson=+0.396  Spearman=+0.366  kappa_q=+0.241  exact=63%  within-1=99%
+  tractability   [blind]  n=160  Pearson=+0.627  Spearman=+0.578  kappa_q=+0.472  exact=54%  within-1=98%
+  tractability   [ctx  ]  n=160  Pearson=+0.601  Spearman=+0.585  kappa_q=+0.572  exact=58%  within-1=99%
+  novelty        [blind]  n=160  Pearson=+0.487  Spearman=+0.456  kappa_q=+0.356  exact=57%  within-1=100%
+  novelty        [ctx  ]  n=160  Pearson=+0.527  Spearman=+0.541  kappa_q=+0.512  exact=71%  within-1=99%
+
+✅ ./neurips_figs/stage5_factorial/analysis/inter_rater.tsv
+
+════════════════════════════════════════════════════════════════════════
+2. VARIANCE DECOMPOSITION (what factor explains score variance?)
+════════════════════════════════════════════════════════════════════════
+   Reports eta-squared: sum_of_squares(factor) / total_sum_of_squares
+
+  [importance]  SST = 157.5  (total variance)
+     agent1      : SS=   0.4  eta^2=0.0022  ( 0.2% of variance)
+     agent2      : SS=   0.2  eta^2=0.0012  ( 0.1% of variance)
+     agent3      : SS=  39.5  eta^2=0.2509  (25.1% of variance)
+     condition   : SS=   1.1  eta^2=0.0072  ( 0.7% of variance)
+     agent3 x cond (interaction): SS=   2.9  eta^2=0.0183  ( 1.8%)
+
+  [tractability]  SST = 356.2  (total variance)
+     agent1      : SS=   0.0  eta^2=0.0000  ( 0.0% of variance)
+     agent2      : SS=   4.2  eta^2=0.0119  ( 1.2% of variance)
+     agent3      : SS=  16.3  eta^2=0.0456  ( 4.6% of variance)
+     condition   : SS=  56.4  eta^2=0.1584  (15.8% of variance)
+     agent3 x cond (interaction): SS=   2.8  eta^2=0.0077  ( 0.8%)
+
+  [novelty]  SST = 193.2  (total variance)
+     agent1      : SS=   0.0  eta^2=0.0001  ( 0.0% of variance)
+     agent2      : SS=   0.2  eta^2=0.0008  ( 0.1% of variance)
+     agent3      : SS=  11.6  eta^2=0.0598  ( 6.0% of variance)
+     condition   : SS=   0.1  eta^2=0.0005  ( 0.1% of variance)
+     agent3 x cond (interaction): SS=   3.0  eta^2=0.0157  ( 1.6%)
+
+✅ ./neurips_figs/stage5_factorial/analysis/variance_decomp.tsv
+
+════════════════════════════════════════════════════════════════════════
+3. FLAGSHIP HYPOTHESES (robust high-quality across all conditions)
+════════════════════════════════════════════════════════════════════════
+   For each hypothesis (a1, a2, hyp_key), compute mean score across
+   both judges x both conditions (4 validator scores total).
+   Top 15 shown by combined importance+tractability+novelty.
+
+Total hypotheses scored: 160
+Robust hypotheses (max disagreement across judges/conds <= 2): 159
+
+TOP 15 BY COMBINED SCORE (robust, max_disagreement <= 2):
+------------------------------------------------------------------------
+
+  # 1. [claude->gpt] SPL4SMGP + MYD13Q1
+        domain: Ecohydrology
+        scores: imp=4.00  tract=4.50  novel=3.00  combined=11.50
+        max disagreement across 4 judgments: 1
+        Q: Does sub-seasonal root-zone soil moisture variability control the timing and magnitude of vegetation greening across semi-arid eco...
+
+  # 2. [gpt->gpt] IRKUB1B + IRMCR1B
+        domain: glaciology
+        scores: imp=4.50  tract=3.75  novel=3.25  combined=11.50
+        max disagreement across 4 judgments: 1
+        Q: Do along-track changes in Ku-band surface echo strength predict the presence and thickness of near-surface firn aquifers and/or ic...
+
+  # 3. [claude->claude] SPL4SMGP + MYD13Q1
+        domain: Ecohydrology
+        scores: imp=4.00  tract=4.25  novel=3.00  combined=11.25
+        max disagreement across 4 judgments: 1
+        Q: Does SMAP L4 root zone soil moisture (0–100 cm) predict vegetation greenup timing and magnitude in semi-arid grasslands better tha...
+
+  # 4. [claude->gpt] MOD08_M3 + CAL_LID_L3_Tropospheric_APro_CloudFree-Standard-V4-20
+        domain: Aerosol-cloud
+        scores: imp=4.50  tract=3.50  novel=3.25  combined=11.25
+        max disagreement across 4 judgments: 1
+        Q: Does the vertical placement of tropospheric aerosol (near-surface vs elevated layers) modulate the monthly relationship between ae...
+
+  # 5. [gpt->claude] IRKUB1B + IRMCR1B
+        domain: Glaciology / Cryosphere
+        scores: imp=4.00  tract=3.25  novel=4.00  combined=11.25
+        max disagreement across 4 judgments: 1
+        Q: Does the englacial stratigraphy detected by MCoRDS ice-penetrating radar systematically predict surface roughness anomalies measur...
+
+  # 6. [gpt->gpt] MYD13A2 + MYD15A2H
+        domain: vegetation phenology
+        scores: imp=4.00  tract=4.25  novel=3.00  combined=11.25
+        max disagreement across 4 judgments: 1
+        Q: Does the seasonal relationship between canopy greenness (EVI/NDVI) and canopy structure (LAI/FPAR) exhibit a systematic hysteresis...
+
+  # 7. [gpt->gpt] SPL4SMGP + MYD13Q1
+        domain: ecohydrology
+        scores: imp=4.00  tract=4.50  novel=2.75  combined=11.25
+        max disagreement across 4 judgments: 1
+        Q: Does root-zone soil moisture variability control the timing and magnitude of vegetation greening across semi-arid ecosystems at se...
+
+  # 8. [gpt->gpt] MOD08_M3 + CAL_LID_L3_Tropospheric_APro_CloudFree-Standard-V4-20
+        domain: aerosol-cloud interactions
+        scores: imp=4.75  tract=3.50  novel=3.00  combined=11.25
+        max disagreement across 4 judgments: 1
+        Q: Does the vertical distribution of tropospheric aerosol extinction modulate the sensitivity of low-cloud properties to aerosol load...
+
+  # 9. [gpt->gpt] MOD06_L2 + CAL_LID_L2_VFM-Standard-V4-20
+        domain: Cloud remote sensing
+        scores: imp=4.00  tract=4.75  novel=2.50  combined=11.25
+        max disagreement across 4 judgments: 1
+        Q: Do MODIS/Terra MOD06_L2 cloud optical thickness and effective radius retrievals exhibit systematic biases when clouds are vertical...
+
+  #10. [claude->claude] MOD17A2H + MOD14A1
+        domain: Fire ecology, carbon cycling
+        scores: imp=4.00  tract=4.00  novel=3.00  combined=11.00
+        max disagreement across 4 judgments: 0
+        Q: How does fire frequency and radiative power in African savanna ecosystems affect the interannual recovery trajectory of gross prim...
+
+  #11. [claude->claude] AIRS2RET + MYD35_L2
+        domain: Atmospheric Remote Sensing
+        scores: imp=4.00  tract=4.00  novel=3.00  combined=11.00
+        max disagreement across 4 judgments: 0
+        Q: Does AIRS-retrieved upper-tropospheric water vapor systematically differ between clear-sky and cloud-adjacent scenes as identified...
+
+  #12. [claude->gpt] GEDI02_A + ASTGTM
+        domain: Topography
+        scores: imp=3.75  tract=4.75  novel=2.50  combined=11.00
+        max disagreement across 4 judgments: 1
+        Q: Does canopy height systematically bias ASTER GDEM V003 elevations relative to ground elevation measured by GEDI L2A across global ...
+
+  #13. [claude->gpt] ATL08 + HMA_DEM8m_AT
+        domain: Cryosphere-ecology
+        scores: imp=4.00  tract=3.00  novel=4.00  combined=11.00
+        max disagreement across 4 judgments: 2
+        Q: Do glacier-adjacent vegetation canopy heights in High Mountain Asia increase systematically with recent local glacier surface lowe...
+
+  #14. [claude->gpt] MOD13Q1 + MCD43A2
+        domain: Vegetation remote sensing
+        scores: imp=4.00  tract=4.00  novel=3.00  combined=11.00
+        max disagreement across 4 judgments: 0
+        Q: Does increased within-composite BRDF inversion quality (as a proxy for view/illumination stability and atmospheric clarity) system...
+
+  #15. [claude->gpt] AIRX2RET + CAL_LID_L2_05kmAPro-Standard-V4-21
+        domain: Atmospheric remote sensing
+        scores: imp=4.00  tract=4.00  novel=3.00  combined=11.00
+        max disagreement across 4 judgments: 0
+        Q: Do elevated aerosol layers observed by CALIPSO systematically bias AIRS mid-tropospheric temperature and humidity retrievals under...
+
+✅ ./neurips_figs/stage5_factorial/analysis/flagship_hypotheses.tsv  (160 hypotheses ranked)
+
+════════════════════════════════════════════════════════════════════════
+SUMMARY FOR PAPER
+════════════════════════════════════════════════════════════════════════
+
+  Inter-rater:          see ./neurips_figs/stage5_factorial/analysis/inter_rater.tsv
+  Variance decomp:      see ./neurips_figs/stage5_factorial/analysis/variance_decomp.tsv
+  Flagship hypotheses:  see ./neurips_figs/stage5_factorial/analysis/flagship_hypotheses.tsv
+
+  Ready to draft the paper. Top 3-5 flagship hypotheses above should
+  become the qualitative case studies in the results section.
+

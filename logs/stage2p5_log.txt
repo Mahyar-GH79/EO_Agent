@@ -1,0 +1,246 @@
+/mnt/data1/mahyar/EO_Agent/env/lib/python3.10/site-packages/transformers/utils/hub.py:105: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Device: cuda
+
+══════════════════════════════════════════════════════════════
+Loading artifacts
+══════════════════════════════════════════════════════════════
+   train pairs: 13,529  val: 6,119
+   eval: all=2,451  cold=792  cross=1,075
+   SPECTER2: (1475, 768)
+   homo edge_index: torch.Size([2, 27058])
+   val pool: 2,236 pairs
+   loaded 18 baseline records from Stage 2
+
+══════════════════════════════════════════════════════════════
+CUMULATIVE ABLATION SWEEP
+══════════════════════════════════════════════════════════════
+
+─── Config 1/11: +pubs_uses (hetero only) ───
+   [skip] homo unaffected by +pubs_uses
+   [hetero] config=+pubs_uses  flags=['pubs_uses']
+      nodes: DS=1475 KW=91 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=86 PUB-USES=42261 PUB-CITES=0 PUB-AREA=0
+      seed 0:   3.2s  val MRR=0.422
+      seed 1:   2.1s  val MRR=0.425
+      seed 2:   2.3s  val MRR=0.424
+   [hetero] val MRR=0.424  (first)  ✓ KEEP
+       all         H@10=0.462
+       cold_start  H@10=0.520
+       cross_daac  H@10=0.166
+
+─── Config 2/11: +pubs_cites (hetero only) ───
+   [skip] homo unaffected by +pubs_cites
+   [hetero] config=+pubs_cites  flags=['pubs_cites', 'pubs_uses']
+      nodes: DS=1475 KW=91 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=86 PUB-USES=42261 PUB-CITES=6767 PUB-AREA=0
+      seed 0:   2.8s  val MRR=0.421
+      seed 1:   2.4s  val MRR=0.423
+      seed 2:   2.7s  val MRR=0.423
+   [hetero] val MRR=0.422  Δ=-0.0013  ✗ DROP
+       all         H@10=0.461
+       cold_start  H@10=0.515
+       cross_daac  H@10=0.169
+
+─── Config 3/11: +pubs_area (hetero only) ───
+   [skip] homo unaffected by +pubs_area
+   [hetero] config=+pubs_area  flags=['pubs_area', 'pubs_uses']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:   2.5s  val MRR=0.428
+      seed 1:   2.4s  val MRR=0.428
+      seed 2:   2.5s  val MRR=0.427
+   [hetero] val MRR=0.428  Δ=+0.0042  ✓ KEEP
+       all         H@10=0.475
+       cold_start  H@10=0.531
+       cross_daac  H@10=0.167
+
+─── Config 4/11: +edge_weights (hetero only) ───
+   [skip] homo unaffected by +edge_weights
+   [hetero] config=+edge_weights  flags=['edge_weights', 'pubs_area', 'pubs_uses']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:   2.5s  val MRR=0.428
+      seed 1:   2.4s  val MRR=0.428
+      seed 2:   2.4s  val MRR=0.427
+   [hetero] val MRR=0.428  Δ=+0.0000  ✗ DROP
+       all         H@10=0.475
+       cold_start  H@10=0.531
+       cross_daac  H@10=0.167
+
+─── Config 5/11: +3_layers  ───
+   [homo] config=+3_layers  flags=['3_layers']
+      seed 0:   1.2s  val MRR=0.386
+      seed 1:   1.4s  val MRR=0.395
+      seed 2:   1.1s  val MRR=0.404
+   [homo] val MRR=0.395  (first)  ✓ KEEP
+       all         H@10=0.418
+       cold_start  H@10=0.418
+       cross_daac  H@10=0.150
+   [hetero] config=+3_layers  flags=['3_layers', 'pubs_area', 'pubs_uses']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:   2.7s  val MRR=0.412
+      seed 1:   2.9s  val MRR=0.418
+      seed 2:   2.9s  val MRR=0.414
+   [hetero] val MRR=0.415  Δ=-0.0129  ✗ DROP
+       all         H@10=0.453
+       cold_start  H@10=0.517
+       cross_daac  H@10=0.158
+
+─── Config 6/11: +residual  ───
+   [homo] config=+residual  flags=['3_layers', 'residual']
+      seed 0:   1.1s  val MRR=0.424
+      seed 1:   1.1s  val MRR=0.428
+      seed 2:   1.2s  val MRR=0.411
+   [homo] val MRR=0.421  Δ=+0.0259  ✓ KEEP
+       all         H@10=0.450
+       cold_start  H@10=0.476
+       cross_daac  H@10=0.151
+   [hetero] config=+residual  flags=['pubs_area', 'pubs_uses', 'residual']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:   2.5s  val MRR=0.424
+      seed 1:   2.5s  val MRR=0.429
+      seed 2:   2.9s  val MRR=0.427
+   [hetero] val MRR=0.427  Δ=-0.0010  ✗ DROP
+       all         H@10=0.475
+       cold_start  H@10=0.529
+       cross_daac  H@10=0.175
+
+─── Config 7/11: +layer_concat  ───
+   [homo] config=+layer_concat  flags=['3_layers', 'layer_concat', 'residual']
+      seed 0:   1.1s  val MRR=0.427
+      seed 1:   1.1s  val MRR=0.426
+      seed 2:   1.1s  val MRR=0.415
+   [homo] val MRR=0.423  Δ=+0.0019  ✓ KEEP
+       all         H@10=0.449
+       cold_start  H@10=0.489
+       cross_daac  H@10=0.150
+   [hetero] config=+layer_concat  flags=['layer_concat', 'pubs_area', 'pubs_uses']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:   2.4s  val MRR=0.429
+      seed 1:   2.9s  val MRR=0.428
+      seed 2:   2.5s  val MRR=0.428
+   [hetero] val MRR=0.428  Δ=+0.0005  ✗ DROP
+       all         H@10=0.475
+       cold_start  H@10=0.527
+       cross_daac  H@10=0.169
+
+─── Config 8/11: +neg_5x  ───
+   [homo] config=+neg_5x  flags=['3_layers', 'layer_concat', 'neg_5x', 'residual']
+      seed 0:   3.4s  val MRR=0.437
+      seed 1:   3.8s  val MRR=0.439
+      seed 2:   3.3s  val MRR=0.417
+   [homo] val MRR=0.431  Δ=+0.0083  ✓ KEEP
+       all         H@10=0.459
+       cold_start  H@10=0.489
+       cross_daac  H@10=0.149
+   [hetero] config=+neg_5x  flags=['neg_5x', 'pubs_area', 'pubs_uses']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:   7.8s  val MRR=0.426
+      seed 1:   7.6s  val MRR=0.420
+      seed 2:   8.5s  val MRR=0.425
+   [hetero] val MRR=0.423  Δ=-0.0045  ✗ DROP
+       all         H@10=0.483
+       cold_start  H@10=0.524
+       cross_daac  H@10=0.191
+
+─── Config 9/11: +bpr_loss  ───
+   [homo] config=+bpr_loss  flags=['3_layers', 'bpr_loss', 'layer_concat', 'neg_5x', 'residual']
+      seed 0:   3.6s  val MRR=0.404
+      seed 1:   3.3s  val MRR=0.409
+      seed 2:   3.3s  val MRR=0.406
+   [homo] val MRR=0.407  Δ=-0.0245  ✗ DROP
+       all         H@10=0.439
+       cold_start  H@10=0.476
+       cross_daac  H@10=0.138
+   [hetero] config=+bpr_loss  flags=['bpr_loss', 'pubs_area', 'pubs_uses']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:   1.9s  val MRR=0.427
+      seed 1:   2.1s  val MRR=0.429
+      seed 2:   2.3s  val MRR=0.428
+   [hetero] val MRR=0.428  Δ=+0.0001  ✗ DROP
+       all         H@10=0.469
+       cold_start  H@10=0.522
+       cross_daac  H@10=0.165
+
+─── Config 10/11: +mlp_scorer  ───
+   [homo] config=+mlp_scorer  flags=['3_layers', 'layer_concat', 'mlp_scorer', 'neg_5x', 'residual']
+      seed 0:  12.0s  val MRR=0.276
+      seed 1:  10.5s  val MRR=0.277
+      seed 2:  11.5s  val MRR=0.275
+   [homo] val MRR=0.276  Δ=-0.1553  ✗ DROP
+       all         H@10=0.266
+       cold_start  H@10=0.133
+       cross_daac  H@10=0.198
+   [hetero] config=+mlp_scorer  flags=['mlp_scorer', 'pubs_area', 'pubs_uses']
+      nodes: DS=1475 KW=100 INST=798 PLAT=234 PROJ=220 PUB=18757
+      edges: DS-PLAT=2399 DS-KW=5183 DS-PROJ=2007 PLAT-INST=1852 KW-SUB=97 PUB-USES=42261 PUB-CITES=0 PUB-AREA=14727
+      seed 0:  14.2s  val MRR=0.469
+      seed 1:  13.9s  val MRR=0.471
+      seed 2:  14.3s  val MRR=0.453
+   [hetero] val MRR=0.464  Δ=+0.0364  ✓ KEEP
+       all         H@10=0.471
+       cold_start  H@10=0.379
+       cross_daac  H@10=0.273
+
+─── Config 11/11: +ensemble  ───
+      seed 0: val MRR=0.437  α=1.00
+      seed 1: val MRR=0.439  α=1.00
+      seed 2: val MRR=0.425  α=0.90
+      homo   all         H@10=0.466
+      homo   cold_start  H@10=0.475
+      homo   cross_daac  H@10=0.158
+      seed 0: val MRR=0.469  α=1.00
+      seed 1: val MRR=0.471  α=1.00
+      seed 2: val MRR=0.453  α=0.90
+      hetero all         H@10=0.474
+      hetero cold_start  H@10=0.377
+      hetero cross_daac  H@10=0.274
+
+══════════════════════════════════════════════════════════════
+Saving outputs
+══════════════════════════════════════════════════════════════
+   ✅ ./neurips_figs/stage2p5_ablation.tsv
+   ✅ ./neurips_figs/stage2p5_summary.tsv
+
+▶ Writing LaTeX ablation table …
+   ✅ ./neurips_figs/tab_stage2p5_ablation.tex
+
+══════════════════════════════════════════════════════════════
+FINAL ABLATION SUMMARY (Hits@10)
+══════════════════════════════════════════════════════════════
+
+Variant  Config                            all       cold_start       cross_daac
+homo     baseline            ✓   0.448±0.001    0.473±0.005    0.146±0.001
+homo     +3_layers           ✓   0.418±0.007    0.418±0.014    0.150±0.019
+homo     +residual           ✓   0.450±0.007    0.476±0.009    0.151±0.009
+homo     +layer_concat       ✓   0.449±0.007    0.489±0.007    0.150±0.010
+homo     +neg_5x             ✓   0.459±0.014    0.489±0.011    0.149±0.011
+homo     +bpr_loss               0.439±0.004    0.476±0.006    0.138±0.005
+homo     +mlp_scorer             0.266±0.001    0.133±0.005    0.198±0.002
+homo     +ensemble           ✓   0.466±0.006    0.475±0.025    0.158±0.013
+hetero   baseline            ✓   0.468±0.003    0.519±0.003    0.175±0.006
+hetero   +pubs_uses          ✓   0.462±0.006    0.520±0.004    0.166±0.003
+hetero   +pubs_cites             0.461±0.007    0.515±0.012    0.169±0.004
+hetero   +pubs_area          ✓   0.475±0.003    0.531±0.007    0.167±0.009
+hetero   +edge_weights           0.475±0.003    0.531±0.007    0.167±0.009
+hetero   +3_layers               0.453±0.003    0.517±0.017    0.158±0.015
+hetero   +residual               0.475±0.005    0.529±0.005    0.175±0.006
+hetero   +layer_concat           0.475±0.007    0.527±0.006    0.169±0.002
+hetero   +neg_5x                 0.483±0.010    0.524±0.003    0.191±0.011
+hetero   +bpr_loss               0.469±0.006    0.522±0.010    0.165±0.008
+hetero   +mlp_scorer         ✓   0.471±0.012    0.379±0.006    0.273±0.008
+hetero   +ensemble           ✓   0.474±0.008    0.377±0.009    0.274±0.007
+
+Final kept levers per variant:
+   homo    : ['3_layers', 'layer_concat', 'neg_5x', 'residual']
+   hetero  : ['mlp_scorer', 'pubs_area', 'pubs_uses']
+
+══════════════════════════════════════════════════════════════
+STAGE 2.5 COMPLETE
+══════════════════════════════════════════════════════════════

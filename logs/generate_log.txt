@@ -1,0 +1,11 @@
+════════════════════════════════════════════════════════════════════════
+STAGE 5 FACTORIAL  (live=True, task=generate)
+════════════════════════════════════════════════════════════════════════
+  [hypotheses_gpt_gpt.tsv] agent=gpt  todo=16/40  est cost=$0.06
+  ✅ ./neurips_figs/stage5_factorial/hypotheses_gpt_gpt.tsv  (40 hypotheses)
+  [hypotheses_gpt_claude.tsv] agent=claude  todo=40/40  est cost=$0.72
+  ✅ ./neurips_figs/stage5_factorial/hypotheses_gpt_claude.tsv  (40 hypotheses)
+  [hypotheses_claude_gpt.tsv] agent=gpt  todo=40/40  est cost=$0.14
+  ✅ ./neurips_figs/stage5_factorial/hypotheses_claude_gpt.tsv  (40 hypotheses)
+  [hypotheses_claude_claude.tsv] agent=claude  todo=40/40  est cost=$0.72
+  ✅ ./neurips_figs/stage5_factorial/hypotheses_claude_claude.tsv  (40 hypotheses)

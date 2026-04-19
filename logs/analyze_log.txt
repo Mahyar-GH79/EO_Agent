@@ -1,0 +1,67 @@
+════════════════════════════════════════════════════════════════════════
+STAGE 5 FACTORIAL  (live=False, task=analyze)
+════════════════════════════════════════════════════════════════════════
+
+Loaded 640 validator judgments across experiments
+
+══════════════════════════════════════════════════════════════════════════════
+PER-EXPERIMENT MEAN SCORES  (condition = both blind+ctx averaged)
+══════════════════════════════════════════════════════════════════════════════
+a1       a2       a3       cond   n     imp    tract  novel 
+gpt      gpt      gpt      blind  40    4.03   4.33   2.88
+gpt      gpt      gpt      ctx    40    4.05   3.52   2.88
+gpt      gpt      claude   blind  40    3.33   3.90   2.48
+gpt      gpt      claude   ctx    40    3.55   3.25   2.55
+gpt      claude   gpt      blind  40    3.98   4.08   2.90
+gpt      claude   gpt      ctx    40    3.88   3.38   2.70
+gpt      claude   claude   blind  40    3.45   3.60   2.58
+gpt      claude   claude   ctx    40    3.62   3.15   2.67
+claude   gpt      gpt      blind  40    4.05   4.25   2.95
+claude   gpt      gpt      ctx    40    3.98   3.58   2.80
+claude   gpt      claude   blind  40    3.38   3.70   2.52
+claude   gpt      claude   ctx    40    3.58   3.30   2.65
+claude   claude   gpt      blind  40    4.08   4.03   2.92
+claude   claude   gpt      ctx    40    4.03   3.30   2.62
+claude   claude   claude   blind  40    3.45   3.67   2.45
+claude   claude   claude   ctx    40    3.73   3.33   2.60
+
+══════════════════════════════════════════════════════════════════════════════
+SELF-PREFERENCE EFFECT  (when Agent 3 = Agent 2, vs cross-model)
+══════════════════════════════════════════════════════════════════════════════
+  [blind] self (same model): 3.473 (n=160)
+  [blind] cross (diff model): 3.440 (n=160)
+  [blind] self-preference bias: +0.033
+  [ctx] self (same model): 3.325 (n=160)
+  [ctx] cross (diff model): 3.231 (n=160)
+  [ctx] self-preference bias: +0.094
+
+══════════════════════════════════════════════════════════════════════════════
+MARGINAL EFFECT  (mean score when agent_X = gpt vs claude)
+══════════════════════════════════════════════════════════════════════════════
+
+  [importance]
+    agent1=gpt     n=320   mean=3.734
+    agent1=claude  n=320   mean=3.781
+    agent2=gpt     n=320   mean=3.741
+    agent2=claude  n=320   mean=3.775
+    agent3=gpt     n=320   mean=4.006
+    agent3=claude  n=320   mean=3.509
+
+  [tractability]
+    agent1=gpt     n=320   mean=3.650
+    agent1=claude  n=320   mean=3.644
+    agent2=gpt     n=320   mean=3.728
+    agent2=claude  n=320   mean=3.566
+    agent3=gpt     n=320   mean=3.806
+    agent3=claude  n=320   mean=3.487
+
+  [novelty]
+    agent1=gpt     n=320   mean=2.703
+    agent1=claude  n=320   mean=2.691
+    agent2=gpt     n=320   mean=2.712
+    agent2=claude  n=320   mean=2.681
+    agent3=gpt     n=320   mean=2.831
+    agent3=claude  n=320   mean=2.562
+
+✅ ./neurips_figs/stage5_factorial/final_factorial_results.tsv
+✅ ./neurips_figs/stage5_factorial/all_validations_raw.tsv

@@ -1,0 +1,46 @@
+════════════════════════════════════════════════════════════════════════
+STAGE 5 FACTORIAL  (live=True, task=agent1_claude)
+════════════════════════════════════════════════════════════════════════
+  starting fresh
+  pairs: 800  est cost: $8.40
+    [20/800] rate=0.23/s  eta=56.9m
+    [40/800] rate=0.24/s  eta=53.0m
+    [60/800] rate=0.24/s  eta=50.6m
+    [80/800] rate=0.24/s  eta=49.0m
+    [100/800] rate=0.25/s  eta=47.6m
+    [120/800] rate=0.25/s  eta=46.1m
+    [140/800] rate=0.25/s  eta=44.6m
+    [160/800] rate=0.24/s  eta=43.6m
+    [180/800] rate=0.24/s  eta=42.3m
+    [200/800] rate=0.24/s  eta=41.1m
+    [220/800] rate=0.25/s  eta=39.5m
+    [240/800] rate=0.25/s  eta=37.9m
+    [260/800] rate=0.25/s  eta=36.6m
+    [280/800] rate=0.25/s  eta=35.2m
+    [300/800] rate=0.25/s  eta=33.7m
+    [320/800] rate=0.25/s  eta=32.5m
+    [340/800] rate=0.25/s  eta=31.2m
+    [360/800] rate=0.25/s  eta=29.7m
+    [380/800] rate=0.25/s  eta=28.3m
+    [400/800] rate=0.25/s  eta=27.0m
+    [420/800] rate=0.25/s  eta=25.7m
+    [440/800] rate=0.24/s  eta=24.5m
+    [460/800] rate=0.24/s  eta=23.2m
+    [480/800] rate=0.24/s  eta=21.9m
+    [500/800] rate=0.24/s  eta=20.6m
+    [520/800] rate=0.24/s  eta=19.3m
+    [540/800] rate=0.24/s  eta=18.0m
+    [560/800] rate=0.24/s  eta=16.6m
+    [580/800] rate=0.24/s  eta=15.3m
+    [600/800] rate=0.24/s  eta=13.9m
+    [620/800] rate=0.24/s  eta=12.5m
+    [640/800] rate=0.24/s  eta=11.1m
+    [660/800] rate=0.24/s  eta=9.8m
+    [680/800] rate=0.24/s  eta=8.4m
+    [700/800] rate=0.24/s  eta=7.0m
+    [720/800] rate=0.24/s  eta=5.6m
+    [740/800] rate=0.24/s  eta=4.2m
+    [760/800] rate=0.24/s  eta=2.8m
+    [780/800] rate=0.24/s  eta=1.4m
+    [800/800] rate=0.24/s  eta=0.0m
+  ✅ ./neurips_figs/stage5_factorial/agent1_claude_scores.tsv  (800/800 complete)

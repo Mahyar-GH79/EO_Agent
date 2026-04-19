@@ -1,0 +1,51 @@
+# ─── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ─── Virtual environments ────────────────────────────────
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ─── Data (fetch separately, too large for git) ──────────
+nasa_eo_kg/
+neurips_figs/
+*.graphml
+*.npy
+*.npz
+*.pkl
+*.pt
+*.pth
+*.h5
+
+# ─── Credentials — never commit ──────────────────────────
+.env
+.env.local
+*.key
+*.pem
+openai_key.txt
+anthropic_key.txt
+
+# ─── Editor / OS ─────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*~
+
+# ─── Logs — keep one copy in logs/ but ignore ad-hoc runs at root ─
+
+# ─── Jupyter ─────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ─── Batch API artifacts ─────────────────────────────────
+*.jsonl
+batch_*.json

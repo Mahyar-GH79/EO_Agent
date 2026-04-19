@@ -1,0 +1,403 @@
+Loaded 200 Stratum A judgments
+
+══════════════════════════════════════════════════════════════════════
+TIER 1 — plausibility=5 AND novelty>=3  (HIGHEST-VALUE HERO PAIRS)
+══════════════════════════════════════════════════════════════════════
+Count: 7 pairs
+
+  # 1. [plaus=5  novelty=3  source=mlp]
+        A: AIRS3STM  (GES-DISC)
+           Aqua/AIRS L3 Monthly Standard Physical Retrieval (AIRS-only) 1 degree x 1 degree V7.0 at GES DI
+        B: CERES_EBAF  (ASDC)
+           CERES Energy Balanced and Filled (EBAF) TOA and Surface Monthly means data in netCDF Edition 4.
+        model scores:  dot=+0.879  mlp=+4.327
+        GPT-5.2 rationale:
+          CERES EBAF provides monthly TOA and surface radiative fluxes (including cloud
+          radiative effects), while AIRS L3 monthly retrievals provide coincident atmospheric
+          state variables (e.g., temperature and humidity profiles) on Aqua-era global grids,
+          enabling studies of radiative feedbacks, energy budget closure, and links between
+          thermodynamic structure and radiation/cloud effects. The datasets overlap strongly in
+          time (Aqua period) and are readily co-located at monthly, ~1° scales, making the
+          pairing scientifically well-motivated. The combination is fairly standard in climate
+          diagnostics and feedback attribution (radiation + atmospheric state), so it is not
+          especially novel but still not trivial.
+
+  # 2. [plaus=5  novelty=3  source=mlp]
+        A: SPL4SMGP  (NSIDC)
+           SMAP L4 Global 3-hourly 9 km EASE-Grid Surface and Root Zone Soil Moisture Geophysical Data V00
+        B: MYD13Q1  (LP DAAC)
+           MODIS/Aqua Vegetation Indices 16-Day L3 Global 250m SIN Grid V006
+        model scores:  dot=+0.815  mlp=+4.136
+        GPT-5.2 rationale:
+          MODIS MYD13Q1 vegetation indices (NDVI/EVI) and SMAP L4 surface/root-zone soil
+          moisture are strongly linked through land-surface ecohydrology, enabling studies of
+          vegetation water stress, drought impacts, phenology–moisture coupling, and
+          land–atmosphere feedbacks. Despite differing spatial/temporal resolutions (250
+          m/16-day vs 9 km/3-hourly), they overlap globally and can be harmonized via
+          aggregation and temporal compositing. The pairing is common and well-motivated in
+          drought and vegetation response research, so it is scientifically very plausible but
+          only moderately novel.
+
+  # 3. [plaus=5  novelty=3  source=mlp]
+        A: M2T1NXSLV  (GES-DISC)
+           MERRA-2 tavg1_2d_slv_Nx: 2d,1-Hourly,Time-Averaged,Single-Level,Assimilation,Single-Level Diagn
+        B: CERES_EBAF  (ASDC)
+           CERES Energy Balanced and Filled (EBAF) TOA and Surface Monthly means data in netCDF Edition 4.
+        model scores:  dot=+0.625  mlp=+3.974
+        GPT-5.2 rationale:
+          CERES EBAF provides monthly TOA and surface radiative fluxes and cloud radiative
+          effects, while MERRA-2 single-level diagnostics provide the near-surface and column
+          meteorological state (e.g., temperature, winds, pressure, precipitable water) that can
+          be used to interpret, attribute, or evaluate radiative flux variability and trends.
+          They overlap globally and temporally (satellite era onward), and MERRA-2 can be
+          aggregated from hourly to monthly to match EBAF, enabling studies of
+          radiation–meteorology coupling, energy budget closure, and model/reanalysis evaluation
+          against observed radiation. The pairing is scientifically standard rather than novel
+          because CERES radiation products are commonly combined with reanalyses like MERRA-2
+          for attribution and evaluation.
+
+  # 4. [plaus=5  novelty=3  source=mlp]
+        A: MOD08_M3  (Other)
+           MODIS/Terra Aerosol Cloud Water Vapor Ozone Monthly L3 Global 1Deg CMG
+        B: CAL_LID_L3_Tropospheric_APro_CloudFree-Standard-V4-20  (ASDC)
+           CALIPSO Lidar Level 3 Tropospheric Aerosol Profiles, Cloud Free Data, Standard V4-20
+        model scores:  dot=+0.741  mlp=+3.963
+        GPT-5.2 rationale:
+          Both products provide monthly, gridded aerosol information with strong temporal
+          overlap (Terra MODIS since 2000; CALIPSO since 2006) and compatible spatial scales
+          (MODIS 1° CMG; CALIPSO L3 on a uniform grid), enabling joint analyses such as
+          evaluating column AOD (MODIS) against vertically resolved extinction/AOD and aerosol
+          type (CALIOP) or studying aerosol–cloud relationships using MODIS cloud properties
+          with CALIOP aerosol profiles. The pairing is scientifically well-motivated and
+          commonly complementary (passive column retrievals plus active vertical profiling), so
+          it is not especially novel but remains a standard, useful multi-sensor combination.
+
+  # 5. [plaus=5  novelty=3  source=mlp]
+        A: SPL2SMAP_S  (NSIDC)
+           SMAP/Sentinel-1 L2 Radiometer/Radar 30-Second Scene 3 km EASE-Grid Soil Moisture V003
+        B: MYD13Q1  (LP DAAC)
+           MODIS/Aqua Vegetation Indices 16-Day L3 Global 250m SIN Grid V006
+        model scores:  dot=+0.699  mlp=+3.935
+        GPT-5.2 rationale:
+          These datasets are strongly complementary: SPL2SMAP_S provides surface soil moisture
+          at ~3 km, while MYD13Q1 provides vegetation condition (NDVI/EVI) at 250 m, enabling
+          studies of soil moisture–vegetation coupling, drought impacts, evapotranspiration
+          constraints, and land–atmosphere interactions. They overlap well in time (both span
+          the MODIS/SMAP era) and can be harmonized by aggregating MODIS to the soil-moisture
+          grid and matching MYD13Q1’s 16-day composites to SMAP/Sentinel-1 overpass windows. The
+          pairing is fairly standard in ecohydrology and drought monitoring, so it is not highly
+          novel, though specific applications (e.g., downscaling/validation or biome-specific
+          coupling analyses) can add some non-obvious elements.
+
+  # 6. [plaus=5  novelty=3  source=mlp]
+        A: MOD16A2  (LP DAAC)
+           MODIS/Terra Net Evapotranspiration 8-Day L4 Global 500m SIN Grid V006
+        B: SPL2SMP_E  (NSIDC)
+           SMAP Enhanced L2 Radiometer Half-Orbit 9 km EASE-Grid Soil Moisture V006
+        model scores:  dot=+0.678  mlp=+3.505
+        GPT-5.2 rationale:
+          MOD16A2 provides land-surface evapotranspiration/latent heat flux at 8-day, 500 m
+          resolution, while SPL2SMP_E provides near-surface soil moisture at ~9 km for specific
+          overpass times; these variables are tightly coupled through the surface water and
+          energy balance, enabling studies of drought, land–atmosphere coupling, ET constraints,
+          and model/data assimilation. Spatial and temporal overlap is workable via aggregation
+          of MODIS ET to the SMAP grid and compositing SMAP observations to 8-day periods. The
+          pairing is fairly standard in hydroclimate and ecohydrology (soil moisture–ET
+          coupling), so it is not highly novel but still scientifically meaningful.
+
+  # 7. [plaus=5  novelty=3  source=mlp]
+        A: CIESIN_SEDAC_GRUMPv1_POPDENS  (Other)
+           Global Rural-Urban Mapping Project, Version 1 (GRUMPv1): Population Density Grid
+        B: CIESIN_SEDAC_PMP_IMR  (Other)
+           Poverty Mapping Project: Global Subnational Infant Mortality Rates
+        model scores:  dot=+0.970  mlp=+3.290
+        GPT-5.2 rationale:
+          These datasets are strongly compatible for a year-2000 human-development/health
+          geography study: GRUMPv1 provides ~1 km population density surfaces (including 2000)
+          that can be spatially aligned with the Poverty Mapping Project’s subnational infant
+          mortality rates (also 2000) to examine associations with urbanization, crowding, and
+          access-to-services proxies. The phenomena are scientifically connected via
+          well-established links between population concentration/settlement patterns and infant
+          mortality outcomes, and both products are designed for global/subnational spatial
+          analysis. The pairing is fairly standard rather than novel because population density
+          is a common covariate or stratifier in spatial epidemiology and poverty/health
+          mapping.
+
+══════════════════════════════════════════════════════════════════════
+TIER 2 — plausibility=4 AND novelty>=4  (NOVEL CROSS-DOMAIN PAIRS)
+══════════════════════════════════════════════════════════════════════
+Count: 10 pairs
+
+  # 1. [plaus=4  novelty=4  source=dot]
+        A: OMOCLO  (GES-DISC)
+           OMI/Aura Chlorine Dioxide (OClO) Total Column 1-orbit L2 Swath 13x24 km V003 (OMOCLO) at GES DI
+        B: ML2CH3CL  (GES-DISC)
+           MLS/Aura Level 2 Methyl Chloride (CH3CL) Mixing Ratio V005 (ML2CH3CL) at GES DISC
+        model scores:  dot=+1.000  mlp=-2.538
+        GPT-5.2 rationale:
+          Both datasets are Aura L2 swath products with strong temporal overlap (2004–present)
+          and near-global coverage, enabling co-located analyses despite different sampling (MLS
+          limb profiles vs OMI daytime total columns). Scientifically, CH3Cl is a major natural
+          source of stratospheric chlorine, while OClO is a marker of active chlorine chemistry
+          (notably in polar spring), so combining them is plausible for studies linking chlorine
+          source variability/transport to halogen activation and ozone-loss conditions. The
+          pairing is non-obvious because it connects a long-lived organic chlorine source gas to
+          a short-lived reactive chlorine proxy measured with different viewing geometries and
+          vertical sensitivities, making it less standard than typical ozone/ClO/BrO
+          combinations.
+
+  # 2. [plaus=4  novelty=4  source=dot]
+        A: ML2HO2  (GES-DISC)
+           MLS/Aura Level 2 Hydroperoxy (HO2) Mixing Ratio V004 (ML2HO2) at GES DISC
+        B: OMBRO  (GES-DISC)
+           OMI/Aura Bromine Monoxide (BrO) Total Column 1-orbit L2 Swath 13x24 km V003 (OMBRO) at GES DISC
+        model scores:  dot=+1.000  mlp=-3.217
+        GPT-5.2 rationale:
+          OMI BrO total columns and MLS HO2 vertical profiles can be scientifically linked
+          through halogen–HOx chemistry that controls ozone loss and oxidative capacity,
+          especially in the polar lower stratosphere where BrO and HO2 participate in catalytic
+          cycles. Both are Aura-era, near-global products with frequent orbital sampling,
+          enabling co-located analyses despite differing viewing geometries (nadir column vs
+          limb profiles) and vertical sensitivity. The pairing is non-obvious because it bridges
+          a halogen column product with a radical profile product from different instruments,
+          but it supports coherent studies of coupled halogen/HOx photochemistry and ozone
+          depletion.
+
+  # 3. [plaus=4  novelty=4  source=dot]
+        A: ML2HNO3  (GES-DISC)
+           MLS/Aura Level 2 Nitric Acid (HNO3) Mixing Ratio V005 (ML2HNO3) at GES DISC
+        B: OMHCHOG  (GES-DISC)
+           OMI/Aura Formaldehyde (HCHO) Total Column Daily L2 Global Gridded 0.25 degree x 0.25 degree V3 
+        model scores:  dot=+1.000  mlp=-1.408
+        GPT-5.2 rationale:
+          Both datasets are Aura-era, near-global, and overlapping in time (since 2004),
+          enabling joint analyses of atmospheric composition, though they sample different parts
+          of the atmosphere (MLS stratospheric/upper-tropospheric HNO3 profiles vs OMI
+          tropospheric total-column HCHO). A coherent study could link HCHO (VOC oxidation and
+          HOx chemistry) to NOy partitioning and nitrate formation (HNO3) via photochemical
+          regimes, transport, and stratosphere–troposphere exchange, but would require careful
+          vertical/column interpretation and co-location strategy. The pairing is non-obvious
+          because it bridges tropospheric VOC proxy columns with limb-sounded nitric acid
+          profiles rather than a more direct NO2–HCHO or NOy–O3 combination.
+
+  # 4. [plaus=4  novelty=4  source=dot]
+        A: OMHCHOG  (GES-DISC)
+           OMI/Aura Formaldehyde (HCHO) Total Column Daily L2 Global Gridded 0.25 degree x 0.25 degree V3 
+        B: ML2SO2  (GES-DISC)
+           MLS/Aura Level 2 Sulfur Dioxide (SO2) Mixing Ratio V004 (ML2SO2) at GES DISC
+        model scores:  dot=+0.999  mlp=+0.423
+        GPT-5.2 rationale:
+          OMI HCHO total columns (a proxy for VOC oxidation/photochemical activity and biomass
+          burning influence) can be meaningfully combined with MLS SO2 vertical profiles/columns
+          to study co-emitted or co-located pollution from volcanic eruptions and biomass
+          burning, or to diagnose chemical regimes and plume evolution using complementary
+          tracers. Both are Aura-era, near-global, daily products with substantial temporal
+          overlap, though they differ in sampling geometry (nadir gridded columns vs limb
+          profiles) and vertical sensitivity, requiring careful co-location and interpretation.
+          The pairing is non-obvious because it links different instruments and retrieval types
+          (tropospheric column vs stratosphere/UTLS-focused profiles) but can be coherent for
+          plume/transport and multi-species atmospheric chemistry studies.
+
+  # 5. [plaus=4  novelty=4  source=mlp]
+        A: ATL06  (NSIDC)
+           ATLAS/ICESat-2 L3A Land Ice Height V006
+        B: NSIDC-0730  (NSIDC)
+           MEaSUREs MODIS Mosaic of Antarctica 2013-2014 (MOA2014) Image Map, Version 1
+        model scores:  dot=+0.918  mlp=+4.126
+        GPT-5.2 rationale:
+          ATL06 provides precise land-ice surface elevations and elevation change potential,
+          while MOA2014 provides spatially continuous Antarctic surface properties (snow grain
+          size, morphology) that can help interpret altimetry signals, surface roughness
+          effects, and spatial patterns in firn/snow conditions relevant to height retrieval
+          quality and physical change attribution. Spatial overlap over Antarctica is strong,
+          though temporal overlap is partial (MOA is 2013–2014 summer; ATL06 begins 2018),
+          making the pairing most defensible for static morphology/roughness context, regional
+          stratification, or methodological studies rather than direct contemporaneous process
+          coupling. The combination is non-obvious because it links laser altimetry elevation
+          products with optical-derived surface property mosaics, offering a coherent but not
+          standard cross-domain integration.
+
+  # 6. [plaus=4  novelty=4  source=mlp]
+        A: CIESIN_SEDAC_ULANDSAT_GMIS_V1  (Other)
+           Global Man-made Impervious Surface (GMIS) Dataset From Landsat
+        B: CIESIN_SEDAC_GRANDv1_DAMS  (Other)
+           Global Reservoir and Dam Database, Version 1 (GRanDv1): Dams, Revision 01
+        model scores:  dot=+0.917  mlp=+4.115
+        GPT-5.2 rationale:
+          These datasets can be coherently combined to study coupled human water–land
+          infrastructure, e.g., how dam/reservoir development relates to nearby
+          urbanization/impervious expansion, or to quantify impervious surface within reservoir
+          catchments and around shorelines as a proxy for development pressure and potential
+          water-quality impacts. Spatial overlap is global and the dam/reservoir vectors can be
+          intersected with 30 m impervious cover; temporal alignment is reasonable for analyses
+          focused on conditions circa 2010 or using dam construction year to stratify
+          comparisons. The pairing is non-obvious because it links hydrologic infrastructure
+          inventories with remote-sensed urban surface fractions rather than two products from
+          the same domain, yet it has a clear scientific motivation.
+
+  # 7. [plaus=4  novelty=4  source=mlp]
+        A: NSIDC-0630  (NSIDC)
+           MEaSUREs Calibrated Enhanced-Resolution Passive Microwave Daily EASE-Grid 2.0 Brightness Temper
+        B: MCD43C3  (LP DAAC)
+           MODIS/Terra+Aqua BRDF/Albedo Albedo Daily L3 Global 0.05Deg CMG V061
+        model scores:  dot=-0.276  mlp=+3.720
+        GPT-5.2 rationale:
+          These datasets can be coherently combined to study land-surface and cryosphere
+          energy/water processes, e.g., relating passive-microwave brightness temperature
+          (sensitive to snow/ice state, melt, and surface wetness) to MODIS broadband/spectral
+          albedo changes that modulate radiative forcing and melt dynamics. They have strong
+          temporal overlap (MODIS since 2000; microwave ESDR since 1978) and global coverage,
+          though spatial/temporal harmonization is needed (EASE-Grid microwave vs 0.05° CMG
+          albedo; daily vs 16-day weighted albedo). The pairing is non-obvious because it
+          bridges microwave emissivity/temperature-based diagnostics with optical BRDF/albedo
+          products, but it is scientifically well-motivated for snow/ice melt, freeze–thaw, and
+          land-surface model evaluation.
+
+  # 8. [plaus=4  novelty=4  source=mlp]
+        A: MOD10C1  (NSIDC)
+           MODIS/Terra Snow Cover Daily L3 Global 0.05Deg CMG V061
+        B: NSIDC-0749  (NSIDC)
+           Quicklook Arctic Weekly EASE-Grid Sea Ice Age, Version 1
+        model scores:  dot=+0.542  mlp=+3.663
+        GPT-5.2 rationale:
+          These datasets could be combined to study coupled cryosphere processes across the
+          Arctic, e.g., relating terrestrial snow-cover variability (MOD10C1 daily 0.05° CMG) to
+          sea-ice age evolution (NSIDC-0749 weekly EASE-Grid) as indicators of regional climate
+          forcing, albedo feedbacks, or atmospheric circulation regimes. Spatial overlap is
+          strong in high latitudes and temporal overlap is feasible via aggregation of daily
+          snow to weekly periods and reprojection between grids, though land–ocean domain
+          differences require careful masking and interpretation. The pairing is non-obvious
+          because it links land snow cover with sea-ice age (a dynamic/thermodynamic sea-ice
+          property) rather than more commonly paired sea-ice concentration/extent products, but
+          it remains scientifically coherent.
+
+  # 9. [plaus=4  novelty=4  source=mlp]
+        A: GFSAD30AFCE  (LP DAAC)
+           Global Food Security-support Analysis Data (GFSAD) Cropland Extent 2015 Africa 30 m V001
+        B: GEDI02_A  (LP DAAC)
+           GEDI L2A Elevation and Height Metrics Data Global Footprint Level V002
+        model scores:  dot=+0.849  mlp=+3.529
+        GPT-5.2 rationale:
+          A cropland-extent map for Africa (30 m, nominal 2015) can be meaningfully combined
+          with GEDI L2A footprint-level height/elevation metrics to study vegetation structure
+          within croplands (e.g., agroforestry/tree cover, crop height proxies, biomass/carbon
+          implications) or to stratify/validate land-cover classes using 3D structure. Spatial
+          overlap is good across much of Africa within GEDI’s ±51.6° latitude range, though
+          temporal mismatch (2015 map vs GEDI acquisitions mainly 2019–2023/2024) would require
+          focusing on stable cropland areas or accounting for land-use change. The pairing is
+          non-obvious because it links a 2D cropland extent classification product with
+          spaceborne lidar structural metrics, but it has coherent motivation for
+          agricultural-ecosystem structure and carbon/biodiversity studies.
+
+  #10. [plaus=4  novelty=4  source=mlp]
+        A: IMCS31B  (NSIDC)
+           IceBridge Scintrex CS-3 Cesium Magnetometer L1B Geolocated Magnetic Anomalies V002
+        B: NSIDC-0484  (NSIDC)
+           MEaSUREs InSAR-Based Antarctica Ice Velocity Map V002
+        model scores:  dot=+0.928  mlp=+3.358
+        GPT-5.2 rationale:
+          These datasets can be coherently combined by using airborne magnetic anomaly patterns
+          to infer subglacial geology/tectonic structure and basal conditions, then relating
+          those to spatial variations in InSAR-derived ice velocity (e.g., fast-flowing outlet
+          glaciers vs. slow interior) to test hypotheses about geologic controls on basal
+          friction, hydrology, and ice-stream organization. Spatial overlap over Antarctica is
+          feasible (both are geolocated, continent-scale/regionally extensive), though temporal
+          mismatch is not critical because bedrock magnetic anomalies are effectively
+          time-invariant compared to multi-year velocity mosaics. The pairing is non-obvious
+          because it links solid-Earth geophysics with ice dynamics rather than combining two
+          cryospheric products, yet it has a clear mechanistic motivation.
+
+══════════════════════════════════════════════════════════════════════
+TIER 3 — plausibility=5 AND novelty=2  (STRONGLY PLAUSIBLE, DOMAIN-STANDARD)
+══════════════════════════════════════════════════════════════════════
+Count: 42 pairs
+
+  # 1. [plaus=5  novelty=2  source=dot]
+        A: ML2CLO  (GES-DISC)
+           MLS/Aura Level 2 Chlorine Monoxide (ClO) Mixing Ratio V004 (ML2CLO) at GES DISC
+        B: ML3MBO3  (GES-DISC)
+           MLS/Aura Level 3 Monthly Binned Ozone (O3) Mixing Ratio on Assorted Grids V005 (ML3MBO3) at GES
+        model scores:  dot=+1.000  mlp=-0.355
+        GPT-5.2 rationale:
+          Both datasets are Aura MLS trace-gas products with near-global coverage over the same
+          latitude range and overlapping time periods, and they overlap vertically in the
+          stratosphere (O3 useful 261–0.0215 hPa; ClO 147–1 hPa), enabling joint analyses of
+          ozone chemistry and chlorine-catalyzed ozone loss (e.g., polar processing,
+          diurnal/seasonal variability, interannual trends). The main practical consideration is
+          reconciling Level 3 monthly gridded O3 with Level 2 profile ClO (requiring averaging
+          or collocation), but this is straightforward. The pairing is expected rather than
+          novel because it combines closely related stratospheric constituents measured by the
+          same instrument suite for well-established ozone-depletion science.
+
+  # 2. [plaus=5  novelty=2  source=dot]
+        A: OMSO2e  (GES-DISC)
+           OMI/Aura Sulfur Dioxide (SO2) Total Column Daily L3 1 day Best Pixel in 0.25 degree x 0.25 degr
+        B: OMNO2G  (GES-DISC)
+           OMI/Aura NO2 Total and Tropospheric Column Daily L2 Global Gridded 0.25 degree x 0.25 degree V3
+        model scores:  dot=+1.000  mlp=+2.256
+        GPT-5.2 rationale:
+          Both datasets are daily global gridded OMI/Aura trace-gas column products at the same
+          0.25°×0.25° resolution and overlapping time window, making them straightforward to
+          co-analyze for air-quality, emission, and atmospheric chemistry questions. SO2 and NO2
+          are co-emitted from combustion sources and jointly influence oxidant chemistry and
+          secondary aerosol formation, providing strong scientific motivation for combined
+          analyses. The pairing is not especially novel because it uses two standard OMI
+          tropospheric pollutant products commonly examined together in satellite-based
+          air-quality and emissions studies.
+
+  # 3. [plaus=5  novelty=2  source=dot]
+        A: OMNO2G  (GES-DISC)
+           OMI/Aura NO2 Total and Tropospheric Column Daily L2 Global Gridded 0.25 degree x 0.25 degree V3
+        B: OMDOAO3  (GES-DISC)
+           OMI/Aura DOAS Total Column Ozone 1-Orbit L2 Swath 13x24 km V003 (OMDOAO3) at GES DISC
+        model scores:  dot=+1.000  mlp=-0.130
+        GPT-5.2 rationale:
+          Both datasets come from the same platform/instrument (Aura/OMI) with strong spatial
+          and temporal overlap, enabling consistent co-analysis of total column ozone (DOAS) and
+          NO2 (total/tropospheric) for studies of photochemical ozone production, stratospheric
+          ozone chemistry, and pollution–ozone interactions. The main integration work is
+          reconciling L2 swath ozone pixels with daily 0.25° gridded NO2 and accounting for
+          differing retrieval sensitivities/quality flags. The pairing is scientifically
+          well-motivated but not especially novel because OMI NO2–O3 joint analyses are a common
+          atmospheric chemistry use case.
+
+  # 4. [plaus=5  novelty=2  source=dot]
+        A: OMDOAO3e  (GES-DISC)
+           OMI/Aura Ozone (O3) DOAS Total Column Daily L3 1 day 0.25 degree x 0.25 degree V3 (OMDOAO3e) at
+        B: ML2O3  (GES-DISC)
+           MLS/Aura Level 2 Ozone (O3) Mixing Ratio V005 (ML2O3) at GES DISC
+        model scores:  dot=+0.999  mlp=-1.131
+        GPT-5.2 rationale:
+          Both datasets measure atmospheric ozone from the same satellite platform (Aura) with
+          strong spatial/temporal overlap, but at different vertical sensitivities: MLS provides
+          stratospheric-to-mesospheric ozone profiles while OMI provides daily gridded total
+          column ozone. They can be combined for cross-validation, attribution of total-column
+          variability to vertical layers, and studies of ozone transport/chemistry using
+          profile–column consistency. The pairing is expected rather than novel because it is a
+          common complementary use of co-orbital ozone products (profile + total column) for
+          validation and interpretation.
+
+  # 5. [plaus=5  novelty=2  source=dot]
+        A: OMNO2d  (GES-DISC)
+           OMI/Aura NO2 Cloud-Screened Total and Tropospheric Column L3 Global Gridded 0.25 degree x 0.25 
+        B: OMSO2G  (GES-DISC)
+           OMI/Aura Sulphur Dioxide (SO2) Total Column Daily L2 Global Gridded 0.125 degree x 0.125 degree
+        model scores:  dot=+0.999  mlp=+2.479
+        GPT-5.2 rationale:
+          Both products are daily global gridded trace-gas columns from the same sensor
+          (OMI/Aura) with strong spatial/temporal overlap, making joint analysis straightforward
+          after harmonizing grid resolution and applying consistent cloud/quality filtering.
+          Scientifically, NO2 and SO2 are co-emitted from combustion sources and can be jointly
+          used to attribute emissions, study pollution transport/chemistry, and diagnose
+          volcanic vs anthropogenic plumes. The pairing is expected rather than novel because it
+          combines two closely related OMI atmospheric composition products commonly used
+          together in air-quality and emissions studies.
+
+══════════════════════════════════════════════════════════════════════
+HERO PAIRS BY SOURCE MODEL
+══════════════════════════════════════════════════════════════════════
+  dot : tier_1=  0  tier_2=  4  tier_3= 16
+  mlp : tier_1=  7  tier_2=  6  tier_3= 26
+
+✅ Saved top 25 hero candidates to ./neurips_figs/stage4/hero_pairs_candidates.tsv
+   Total hero-tier pairs found: 59 out of 200

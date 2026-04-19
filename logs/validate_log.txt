@@ -1,0 +1,19 @@
+════════════════════════════════════════════════════════════════════════
+STAGE 5 FACTORIAL  (live=True, task=validate)
+════════════════════════════════════════════════════════════════════════
+  [gpt_gpt_gpt] judge=gpt  todo=32/80  est cost=$0.12
+  ✅ ./neurips_figs/stage5_factorial/experiments/gpt_gpt_gpt_validations.tsv  (80 validations)
+  [gpt_gpt_claude] judge=claude  todo=32/80  est cost=$0.31
+  ✅ ./neurips_figs/stage5_factorial/experiments/gpt_gpt_claude_validations.tsv  (80 validations)
+  [gpt_claude_gpt] judge=gpt  todo=80/80  est cost=$0.31
+  ✅ ./neurips_figs/stage5_factorial/experiments/gpt_claude_gpt_validations.tsv  (80 validations)
+  [gpt_claude_claude] judge=claude  todo=80/80  est cost=$0.77
+  ✅ ./neurips_figs/stage5_factorial/experiments/gpt_claude_claude_validations.tsv  (80 validations)
+  [claude_gpt_gpt] judge=gpt  todo=80/80  est cost=$0.31
+  ✅ ./neurips_figs/stage5_factorial/experiments/claude_gpt_gpt_validations.tsv  (80 validations)
+  [claude_gpt_claude] judge=claude  todo=80/80  est cost=$0.77
+  ✅ ./neurips_figs/stage5_factorial/experiments/claude_gpt_claude_validations.tsv  (80 validations)
+  [claude_claude_gpt] judge=gpt  todo=80/80  est cost=$0.31
+  ✅ ./neurips_figs/stage5_factorial/experiments/claude_claude_gpt_validations.tsv  (80 validations)
+  [claude_claude_claude] judge=claude  todo=80/80  est cost=$0.77
+  ✅ ./neurips_figs/stage5_factorial/experiments/claude_claude_claude_validations.tsv  (80 validations)
