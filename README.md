@@ -1,4 +1,4 @@
-# EO-Agents? A Three-Agent LLM Pipeline for Earth-Observation Hypothesis Generation
+# EO-Agents: A Three-Agent LLM Pipeline for Earth-Observation Hypothesis Generation
 
 An end-to-end pipeline for discovering plausible, unused combinations of
 NASA Earth-observation datasets, combining:
